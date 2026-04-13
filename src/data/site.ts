@@ -2,19 +2,8 @@ import type { CSSProperties } from "react";
 
 export const CONTACT_EMAIL = "moviescriptwriter2@gmail.com";
 
-export const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Project inquiry")}`;
-
-export const gmailComposeHref =
-  "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-  encodeURIComponent(CONTACT_EMAIL) +
-  "&su=" +
-  encodeURIComponent("Project inquiry");
-
-export const outlookComposeHref =
-  "https://outlook.live.com/mail/0/deeplink/compose?to=" +
-  encodeURIComponent(CONTACT_EMAIL) +
-  "&subject=" +
-  encodeURIComponent("Project inquiry");
+/** Plain mailto — works more reliably than long query strings in some clients. */
+export const mailtoHref = `mailto:${CONTACT_EMAIL}`;
 
 export const services = [
   {

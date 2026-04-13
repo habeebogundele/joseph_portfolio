@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "clean": "node scripts/clean-next.js",
+    "dev:fresh": "npm run clean && next dev"
   },
   "dependencies": {
     "next": "^15.1.6",
