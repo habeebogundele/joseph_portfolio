@@ -684,88 +684,71 @@
             margin-top: 3rem;
         }
 
-        .contact-form {
-            max-width: 520px;
-            margin: 3rem auto 0;
-            text-align: left;
-            padding: 2rem;
-            background: rgba(201, 162, 39, 0.05);
-            border: 1px solid rgba(201, 162, 39, 0.15);
+        .contact-email-btn {
+            display: inline-block;
+            font-size: 1.1rem;
+            padding: 1.2rem 3rem;
         }
 
-        .contact-form-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
-            color: var(--text-primary);
-            text-align: center;
-        }
-
-        .contact-form-row {
-            margin-bottom: 1.25rem;
-        }
-
-        .contact-form-row label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+        .contact-mailto-hint {
+            margin-top: 1.25rem;
             color: var(--text-muted);
-            margin-bottom: 0.45rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .contact-form-row input,
-        .contact-form-row textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            color: var(--text-primary);
-            background: rgba(10, 10, 10, 0.6);
-            border: 1px solid rgba(201, 162, 39, 0.25);
-            border-radius: 0;
+        .contact-webmail-row {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-webmail-row a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.35);
+            padding-bottom: 2px;
             transition: var(--transition);
         }
 
-        .contact-form-row input:focus,
-        .contact-form-row textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.25);
+        .contact-webmail-row a:hover {
+            color: var(--accent-light);
+            border-bottom-color: var(--accent-light);
         }
 
-        .contact-form-row textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form .btn {
-            width: 100%;
-            margin-top: 0.5rem;
-        }
-
-        .contact-form-note {
+        .contact-copy-email-btn {
             margin-top: 1rem;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--text-muted);
+            padding: 0.65rem 1.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .contact-copy-email-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .contact-copy-status {
+            margin-top: 0.5rem;
             font-size: 0.85rem;
-            color: var(--text-muted);
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        .contact-form-error {
-            display: none;
-            margin-bottom: 1rem;
-            padding: 0.75rem 1rem;
-            font-size: 0.9rem;
-            color: #fecaca;
-            background: rgba(220, 38, 38, 0.15);
-            border: 1px solid rgba(220, 38, 38, 0.35);
-            text-align: center;
-        }
-
-        .contact-form-error.visible {
-            display: block;
+            color: #4ade80;
+            min-height: 1.25em;
         }
 
         .availability {
@@ -1306,29 +1289,21 @@
                 </div>
             </div>
 
-            <form class="contact-form" id="contact-form" novalidate>
-                <h3 class="contact-form-title">Send a message</h3>
-                <p class="contact-form-error" id="contact-form-error" role="alert">Please fill in your name, email, and message.</p>
-                <div class="contact-form-row">
-                    <label for="cf-name">Name</label>
-                    <input type="text" id="cf-name" name="name" required placeholder="Your name" autocomplete="name">
-                </div>
-                <div class="contact-form-row">
-                    <label for="cf-email">Email</label>
-                    <input type="email" id="cf-email" name="email" required placeholder="you@example.com" autocomplete="email">
-                </div>
-                <div class="contact-form-row">
-                    <label for="cf-message">Message</label>
-                    <textarea id="cf-message" name="message" required rows="5" placeholder="Tell me about your project"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Send message</button>
-                <p class="contact-form-note">Opens Gmail in a new tab with your message filled in. If you use Outlook or Apple Mail, use the copy email link below.</p>
-            </form>
-
             <div class="contact-cta">
-                <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
-                    Response time: Within 24 hours | Initial consultation: Free ·
-                    <a href="mailto:moviescriptwriter2@gmail.com" style="color: var(--accent); text-decoration: none;">moviescriptwriter2@gmail.com</a>
+                <a href="mailto:moviescriptwriter2@gmail.com?subject=Project%20inquiry" class="btn btn-primary contact-email-btn">Compose email</a>
+                <p class="contact-mailto-hint">
+                    Uses your computer's default mail app (Outlook, Apple Mail, Thunderbird, etc.) with <strong>To:</strong> set to
+                    <a href="mailto:moviescriptwriter2@gmail.com">moviescriptwriter2@gmail.com</a>.
+                    <em style="display: block; margin-top: 0.75rem; font-size: 0.88em; color: var(--text-muted);">If nothing happens, your browser preview may block mailto, or no email app is set up—use Gmail or Outlook below, or copy the address.</em>
+                </p>
+                <div class="contact-webmail-row">
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=moviescriptwriter2%40gmail.com&amp;su=Project%20inquiry" target="_blank" rel="noopener noreferrer">Open compose in Gmail</a>
+                    <a href="https://outlook.live.com/mail/0/deeplink/compose?to=moviescriptwriter2%40gmail.com&amp;subject=Project%20inquiry" target="_blank" rel="noopener noreferrer">Open compose in Outlook.com</a>
+                </div>
+                <button type="button" class="contact-copy-email-btn" id="contact-copy-email-btn" data-email="moviescriptwriter2@gmail.com">Copy email address</button>
+                <p class="contact-copy-status" id="contact-copy-status" aria-live="polite"></p>
+                <p style="margin-top: 1.25rem; color: var(--text-muted); font-size: 0.9rem;">
+                    Response time: Within 24 hours | Initial consultation: Free
                 </p>
             </div>
         </div>
@@ -1376,61 +1351,25 @@
             });
         });
 
-        const CONTACT_EMAIL = 'moviescriptwriter2@gmail.com';
-
-        function buildContactMailto(subject, body) {
-            return (
-                'mailto:' +
-                CONTACT_EMAIL +
-                '?subject=' +
-                encodeURIComponent(subject) +
-                '&body=' +
-                encodeURIComponent(body)
-            );
-        }
-
-        function openGmailCompose(subject, body) {
-            const url =
-                'https://mail.google.com/mail/?view=cm&fs=1&to=' +
-                encodeURIComponent(CONTACT_EMAIL) +
-                '&su=' +
-                encodeURIComponent(subject) +
-                '&body=' +
-                encodeURIComponent(body);
-            const win = window.open(url, '_blank', 'noopener,noreferrer');
-            return !!(win && !win.closed);
-        }
-
-        const contactForm = document.getElementById('contact-form');
-        const contactFormError = document.getElementById('contact-form-error');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const name = document.getElementById('cf-name').value.trim();
-                const email = document.getElementById('cf-email').value.trim();
-                const message = document.getElementById('cf-message').value.trim();
-                if (!name || !email || !message) {
-                    if (contactFormError) contactFormError.classList.add('visible');
-                    return;
-                }
-                if (contactFormError) contactFormError.classList.remove('visible');
-
-                const subject = 'Project inquiry from ' + name;
-                const body =
-                    'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-
-                const gmailOpened = openGmailCompose(subject, body);
-                if (!gmailOpened) {
-                    window.location.href = buildContactMailto(subject, body);
-                }
-            });
-
-            contactForm.querySelectorAll('input, textarea').forEach(function (field) {
-                field.addEventListener('input', function () {
-                    if (contactFormError) contactFormError.classList.remove('visible');
+        (function () {
+            var copyBtn = document.getElementById('contact-copy-email-btn');
+            var statusEl = document.getElementById('contact-copy-status');
+            if (copyBtn && statusEl) {
+                var addr = copyBtn.getAttribute('data-email') || '';
+                copyBtn.addEventListener('click', function () {
+                    function done(ok) {
+                        statusEl.textContent = ok ? 'Copied to clipboard.' : '';
+                        if (!ok) window.prompt('Copy this address:', addr);
+                    }
+                    if (!addr) return;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(addr).then(function () { done(true); }).catch(function () { done(false); });
+                    } else {
+                        done(false);
+                    }
                 });
-            });
-        }
+            }
+        })();
 
         // Navbar Background on Scroll
         window.addEventListener('scroll', () => {
