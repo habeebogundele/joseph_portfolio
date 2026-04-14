@@ -5,6 +5,13 @@ export const CONTACT_EMAIL = "moviescriptwriter2@gmail.com";
 /** Plain mailto — works more reliably than long query strings in some clients. */
 export const mailtoHref = `mailto:${CONTACT_EMAIL}`;
 
+/** Opens Gmail compose in the browser (works when no desktop mail app is set). */
+export const gmailComposeHref =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+  encodeURIComponent(CONTACT_EMAIL) +
+  "&su=" +
+  encodeURIComponent("Project inquiry");
+
 export const services = [
   {
     icon: "🎬",
